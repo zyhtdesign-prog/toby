@@ -10,16 +10,16 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
             background-color: #f5f5f5;
             font-family: system-ui, -apple-system, sans-serif;
         }
         .poster-card {
             max-width: 100%;
             width: 100%;
-            text-align: center;
             background: white;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-height: 100vh;
+            overflow-y: auto;
         }
         .poster-image {
             width: 100%;
@@ -27,20 +27,23 @@
             display: block;
         }
         .music-control {
-            padding: 16px;
+            padding: 20px 16px;
             background: white;
+            text-align: center;
             border-top: 1px solid #eee;
         }
         .music-btn {
             background: #4CAF50;
             color: white;
             border: none;
-            padding: 12px 30px;
+            padding: 14px 30px;
             border-radius: 40px;
-            font-size: 16px;
+            font-size: 18px;
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(76,175,80,0.3);
             transition: all 0.3s;
+            width: 80%;
+            max-width: 300px;
         }
         .music-btn:hover {
             background: #45a049;
@@ -56,15 +59,17 @@
 </head>
 <body>
     <div class="poster-card">
-        <!-- ftp://009.3vftp.cn/挖掘机.jpg -->
-        <img src="https://cdn.jsdelivr.net/gh/zyhtdesign-prog/toby/%E5%B1%95%E5%93%811-%E6%8E%A8%E5%9C%9F%E6%9C%BA.jpg" id="posterImage">
+        <!-- 重点：给img加上 class="poster-image" -->
+        <img src="https://cdn.jsdelivr.net/gh/zyhtdesign-prog/toby/%E5%B1%95%E5%93%811-%E6%8E%A8%E5%9C%9F%E6%9C%BA.jpg" 
+             alt="展品海报" 
+             class="poster-image">
 
         <div class="music-control">
             <button id="musicToggle" class="music-btn">🔊 点击播放背景音乐</button>
         </div>
     </div>
 
-    <!-- ！！！ftp://009.3vftp.cn/音频2.MP3 -->
+    <!-- 背景音乐 -->
     <audio id="bgMusic" loop>
         <source src="https://cdn.jsdelivr.net/gh/zyhtdesign-prog/toby/%E6%8E%A8%E5%9C%9F%E6%9C%BA%E4%BB%8B%E7%BB%8D.MP3" type="audio/mpeg">
     </audio>
